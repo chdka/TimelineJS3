@@ -206,7 +206,10 @@ export class TimeAxis {
 
                 // Poition Ticks
                 tick.tick.style.left = timescale.getPosition(tick.date.getMillisecond()) + "px";
-                tick.tick_text.innerHTML = tick.display_date;
+                // as suggested in issue #458
+                if (tick.tick_text.innerHTML != tick.display_date) {
+                    tick.tick_text.innerHTML = tick.display_date;
+                }
 
                 // Handle density of ticks
                 if (fraction_of_array > 1) {
