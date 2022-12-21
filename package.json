@@ -5,6 +5,7 @@
     "description": "TimelineJS v3: A Storytelling Timeline built in JavaScript, made by Northwestern University Knight Lab.",
     "dependencies": {
         "dompurify": "^2.2.7",
+        "npx": "^3.0.0",
         "wicg-inert": "^3.1.2"
     },
     "devDependencies": {
@@ -59,7 +60,8 @@
         "stage_dev": "npm run dist && node tasks/stage.js dev",
         "prepublishOnly": "npm run dist"
     },
-    "contributors": [{
+    "contributors": [
+        {
             "name": "Zach Wise",
             "email": "wise@northwestern.edu",
             "url": "https://github.com/zachwise"
