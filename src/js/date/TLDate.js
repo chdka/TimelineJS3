@@ -280,6 +280,17 @@ export const TLDate = TLClass.extend({
         // Merge data
         mergeData(_date, this.data);
 
+        if (_date.year.toLowerCase() == "_current_") {
+            var d = new Date()
+            _date.year = d.getFullYear();
+            _date.month = d.getMonth()+1; // counter adjust for later
+            _date.day = d.getDate(); // day of the month
+            _date.hour = d.getHours();
+            _date.minute = d.getMinutes();
+            _date.second = d.getSeconds();
+            _date.millisecond = d.getMilliseconds;
+        }
+
         // Make strings into numbers
         for (var ix in DATE_PARTS) {
             var x = trim(_date[DATE_PARTS[ix]]);
